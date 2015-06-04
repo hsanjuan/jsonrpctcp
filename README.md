@@ -1,5 +1,7 @@
 # Jsonrpctcp
 
+[![Build Status](https://travis-ci.org/hsanjuan/jsonrpctcp.svg)](https://travis-ci.org/hsanjuan/jsonrpctcp)
+
 A very simple JSON-RPC 2.0 client library using plain old TCP (`TCPSocket`) for the communication (no HTTP).
 
 ## Installation
