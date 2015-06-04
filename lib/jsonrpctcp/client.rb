@@ -87,7 +87,7 @@ module Jsonrpctcp
       rescue JSON::ParserError
         raise RPCException.new("RPC response could not be parsed")
       ensure
-        socket.close()
+        socket.close() if socket
       end
 
       if Client.is_error?(parsed_response)

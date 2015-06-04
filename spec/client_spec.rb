@@ -120,5 +120,13 @@ describe Client do
         client[:mymethod, "myarg", "myarg2"]
       }.to raise_exception(RPCError)
     end
+
+    it "should cleanly fail if TCP open raises exception" do
+      expect(TCPSocket).to receive(:open).and_raise(Exception)
+      expect(socket).not_to receive(:close)
+      expect {
+        client[:mymethod, "myarg", "myarg2"]
+      }.to raise_exception(Exception)
+    end
   end
 end
