@@ -1,6 +1,6 @@
 # Jsonrpctcp
 
-[![Build Status](https://travis-ci.org/hsanjuan/jsonrpctcp.svg)](https://travis-ci.org/hsanjuan/jsonrpctcp) [![Coverage Status](https://coveralls.io/repos/hsanjuan/jsonrpctcp/badge.svg)](https://coveralls.io/r/hsanjuan/jsonrpctcp)
+[![Gem Version](https://badge.fury.io/rb/jsonrpctcp.svg)](http://badge.fury.io/rb/jsonrpctcp) [![Build Status](https://travis-ci.org/hsanjuan/jsonrpctcp.svg)](https://travis-ci.org/hsanjuan/jsonrpctcp) [![Coverage Status](https://coveralls.io/repos/hsanjuan/jsonrpctcp/badge.svg)](https://coveralls.io/r/hsanjuan/jsonrpctcp)
 
 A very simple JSON-RPC 2.0 client library using plain old TCP (`TCPSocket`) for the communication (no HTTP).
 
