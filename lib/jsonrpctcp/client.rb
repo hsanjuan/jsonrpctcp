@@ -41,7 +41,7 @@ module Jsonrpctcp
     # @return [TrueClass,FalseClass] returns whether a 
     #                                response does have an error key
     def self.is_error?(response)
-      return response.has_key?('error')
+      return !response || !response.is_a?(Hash) || response.has_key?('error')
     end
 
     # Allows to call RPC methods as if they were defined functions: 

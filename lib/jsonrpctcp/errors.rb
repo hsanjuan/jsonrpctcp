@@ -24,7 +24,7 @@ module Jsonrpctcp
   # A custom error for the library
   class RPCError < StandardError
     attr_reader :code, :message, :source_object
-    # RPC erros allow quick access to the code, the message and the 
+    # RPC erros allow quick access to the code, the message and the
     # source error object returned by the server
     # @param message [String] Error message
     # @param code [Fixnum] Error code
@@ -38,9 +38,15 @@ module Jsonrpctcp
     # Creates a RPCError directly from a RPC response
     # @param r [Hash] a parsed response
     def self.from_rpc_response(r)
-      return RPCError.new(r['error']['message'],
-                          r['error']['code'], 
-                          r)
+      if r.nil? || !r.is_a?(Hash)
+        return RPCError.new("Empty response",
+                            nil,
+                            {})
+      else
+        return RPCError.new(r['error']['message'],
+                            r['error']['code'],
+                            r)
+      end
     end
   end
 end
